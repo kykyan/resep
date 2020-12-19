@@ -19,8 +19,11 @@ Route::get('/faq', 'PageController@faq')->name('faq');
 Route::get('/login', 'PageController@login')->name('loginview');
 Route::get('/register', 'PageController@register')->name('registerview');
 
+Route::get('/dashboard', 'PageController@dashboard')->name('dashboard');
+
 Route::get('/tulisresep', 'RecipeController@create')->name('tulisresep');
 Route::post('/', 'RecipeController@store')->name('recipe.store');
 Route::get('/recipe/{id}', 'RecipeController@show')->name('recipe.show');
+Route::get('/search','RecipeController@search')->name('recipe.search');
 
 Auth::routes();

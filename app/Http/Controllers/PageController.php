@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Recipe;
+use Auth;
 
 class PageController extends Controller
 {
@@ -21,5 +23,16 @@ class PageController extends Controller
     public function faq()
     {
         return view('faq');
+    }
+
+    public function dashboard()
+    {
+        $id = Auth::id();
+
+        $recipes = DB::table('recipes')
+            ->where('user_id', $id)
+            ->get();
+        
+        return view('dashboard',['recipes' => $recipes]);
     }
 }

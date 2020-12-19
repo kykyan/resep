@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Recipe;
 use Auth;
 
@@ -106,5 +107,17 @@ class RecipeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+		$search = $request->search;
+ 
+		$recipes = DB::table('recipes')
+            ->where('recipe_name','like',"%".$search."%")
+            ->get();
+ 
+        // dd($recipes);
+		return view('index',['recipes' => $recipes]);
     }
 }

@@ -7,13 +7,13 @@
         <div id="carouselExampleControls" class="carousel slide carousel-fade mb-5" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="frontend/images/makanan/1.jpg" class="d-block w-100" alt="...">
+                    <img src="img/makanan/1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="frontend/images/makanan/2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/makanan/2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="frontend/images/makanan/1.jpg" class="d-block w-100" alt="...">
+                    <img src="img/makanan/1.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand font-weight-bold" href="{{ route('home') }}">
-                <img src="frontend/img/icon/logo.svg" alt="" class="mr-2">
+                <img src="img/icon/logo.svg" alt="" class="mr-2">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -41,23 +41,30 @@
                     <li class="nav-item mr-3"><a class="nav-link" href="{{ route('faq') }}"> FAQ </a></li>
                 </ul>
                 <!-- Search -->
-                <form class="form-inline">
+                <form class="form-inline" action="/search" method="GET">
                     <div class="md-form my-0 ">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" aria-label="Search" value="{{ old('search') }}">
                     </div>
                     <button class="btn btn-outline-primary btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
                 </form>
-                    @if(Route::as('login'))
-                        @auth
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <a href="{{ route('logout') }}" class="btn btn-primary btn-md my-2 my-sm-0 ml-3"
-                                                onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                Logout
-                            </a>
-                        </form>
+                @if(Route::as('login'))
+                @auth
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-md my-2 my-sm-0 ml-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                    Logout
+                                </a>
+                            </form>
+                        </div>
+                    </div>
                         @else
                         <a class="btn btn-primary btn-md my-2 my-sm-0 ml-3" href="{{ route('login') }}">
                             Login
