@@ -7,13 +7,13 @@
         <div id="carouselExampleControls" class="carousel slide carousel-fade mb-5" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/makanan/1.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset ('img/makanan/1.jpg') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/makanan/2.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset ('img/makanan/2.jpg') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/makanan/1.jpg" class="d-block w-100" alt="...">
+                    <img src="{{ asset ('img/makanan/1.jpg') }}" class="d-block w-100" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -37,13 +37,13 @@
             <h2 class="body mb-4">{{ $recipe->description }}</h2>
 
             <h2 class="head">Alat Masak</h2>
-            <h2 class="body mb-4">{{ $recipe->tools }}</h2>
+            <h2 class="body mb-4">{!! $recipe->tools !!}</h2>
 
             <h2 class="head">Bahan</h2>
-            <h2 class="body mb-4">{{ $recipe->ingredients }}</h2>
+            <h2 class="body mb-4">{!! $recipe->ingredients !!}</h2>
 
             <h2 class="head">Cara Masak</h2>
-            <h2 class="body mb-4">{{ $recipe->how_to_make }}</h2>
+            <h2 class="body mb-4">{!! $recipe->how_to_make !!}</h2>
             <!-- </div> -->
         </div>
         <hr>

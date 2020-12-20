@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand font-weight-bold" href="{{ route('home') }}">
-                <img src="img/icon/logo.svg" alt="" class="mr-2">
+                <img src="{{ asset ('img/icon/logo.svg') }}" alt="" class="mr-2">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@
                             Menu
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">ResepKu</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -94,11 +94,11 @@
     <!-- akhir footer -->
 
     <!-- script -->
-    <script src="jquery/jquery-3.5.1.min.js"></script>
+    <script src="{{ asset ('jquery/jquery-3.5.1.min.js') }}"></script>
     <!-- custom script -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset ('js/main.js') }}"></script>
     <!-- bootstrap script -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset ('js/bootstrap.min.js') }}"></script>
     <!-- script font awesome -->
     <script src="https://kit.fontawesome.com/d9ca13cb73.js" crossorigin="anonymous"></script>
 

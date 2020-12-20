@@ -39,7 +39,7 @@
                         <p class="card-text">{{ $recipe->description }}</p>
                             <hr>
                             <div class="text-right">
-                            <a href="{{ route('recipe.show', $recipe->id) }}" class="btn btn-detail">Lihat Detail</a>
+                                <a href="{{ route('recipe.show', $recipe->id) }}" class="btn btn-detail">Lihat Detail</a>
                             </div>
                         </div>
                     </div>

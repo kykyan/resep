@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function home()
     {
-        $recipes = Recipe::all();
+        $recipes = Recipe::where('is_publish', 1)->get();
         return view('index', compact('recipes'));
     }
 
@@ -31,6 +31,7 @@ class PageController extends Controller
 
         $recipes = DB::table('recipes')
             ->where('user_id', $id)
+            ->where('is_publish', 1)
             ->get();
         
         return view('dashboard',['recipes' => $recipes]);
