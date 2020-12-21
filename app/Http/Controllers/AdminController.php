@@ -8,6 +8,11 @@ use App\Recipe;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+    
     public function activeRecipe()
     {
         $data['recipe'] = Recipe::where('is_publish', 1)
@@ -44,5 +49,10 @@ class AdminController extends Controller
             ]);
         
         return redirect('/deletedrecipe');
+    }
+
+    public function dashboard()
+    {
+        return view('admin.dashboard');
     }
 }

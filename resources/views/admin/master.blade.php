@@ -36,8 +36,12 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a href="/logout" class="btn btn-link">Log Out</a>
+          <a href="{{ route('logout') }}" class="btn btn-link" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Log Out</a>
         </li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -46,7 +50,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="/dashboard" class="brand-link ml-4">
-        <span class="brand-text font-weight-light" style="font-family: Comic Sans MS, Comic Sans, cursive">Nama User</span>
+        <span class="brand-text font-weight-light" style="font-family: Comic Sans MS, Comic Sans, cursive">{{ Auth::user()->name }}</span>
       </a>
 
       <!-- Sidebar -->
